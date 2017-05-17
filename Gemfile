@@ -29,6 +29,8 @@ gem 'devise_token_auth'
 gem 'omniauth-github'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'foreman', '~> 0.82.0'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
