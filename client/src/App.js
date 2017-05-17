@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import { PropTypes } from 'prop-types';
 import SelectedFoods from './SelectedFoods';
 import FoodSearch from './FoodSearch';
 import { NavBar } from './modules/';
@@ -23,10 +24,12 @@ class App extends Component {
 
   render() {
     const { selectedFoods } = this.state;
+    const { location, children } = this.props;
 
     return (
       <div className='App'>
-        <NavBar />
+        <NavBar path={location.pathname}/>
+        {children}
         <div className='ui text container'>
           <SelectedFoods
             foods={selectedFoods}
@@ -39,6 +42,11 @@ class App extends Component {
       </div>
     );
   }
+}
+
+App.propTypes = {
+  children: PropTypes.element.isRequired,
+  location: PropTypes.object.isRequired
 }
 
 export default App;
