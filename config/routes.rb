@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   scope '/api' do
     get :food, to: 'foods#index'
   end
+
+  scope :auth do
+    get 'is_signed_in', to: 'auth#is_signed_in?'
+  end
 end

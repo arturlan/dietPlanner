@@ -25,6 +25,12 @@ module DietPlanner
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
+
+    #stuff for authentication a user
+    config.to_prepare do
+      DeviseController.respond_to :html, :json
+    end
+
     config.api_only = true
   end
 end

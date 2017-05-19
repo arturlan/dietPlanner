@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import SelectedFoods from './SelectedFoods';
 import FoodSearch from './FoodSearch';
 
@@ -21,7 +21,7 @@ class Food extends Component {
 
   render() {
     const { selectedFoods } = this.state;
-    const { location, children } = this.props;
+    // const { location, children } = this.props;
 
     return (
       <div className='ui text container'>

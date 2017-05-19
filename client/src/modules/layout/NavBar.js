@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { PropTypes } from 'prop-types'; 
+import { PropTypes } from 'prop-types';
 import { Menu } from 'semantic-ui-react';
 import logo from '../../logo.jpg';
 import './style.css';
@@ -18,6 +18,9 @@ class NavBar extends Component {
       </Menu.Item>
     </Menu.Menu>
     <Menu.Menu position="right">
+      <Menu.Item active={path === '/food'} onClick={() =>  browserHistory.push('/food')}>
+        Search Food
+      </Menu.Item>
       <Menu.Item active={path === '/login'} onClick={() =>  browserHistory.push('/login')}>
         Login
       </Menu.Item>
