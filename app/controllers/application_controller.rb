@@ -5,13 +5,14 @@ class ApplicationController < ActionController::API
   #stuff for authentication a user
 
 
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :null_session
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  private
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :name
-    devise_parameter_sanitizer.for(:sign_up) << :provider
-    devise_parameter_sanitizer.for(:sign_up) << :uid
+    devise_parameter_sanitizer.permit(:sign_up) do |user_params|
+      user_params.permit :name, :provider, :uid
+    end
   end
 end

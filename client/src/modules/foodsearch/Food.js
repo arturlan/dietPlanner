@@ -21,7 +21,6 @@ class Food extends Component {
 
   render() {
     const { selectedFoods } = this.state;
-    // const { location, children } = this.props;
 
     return (
       <div className='ui text container'>

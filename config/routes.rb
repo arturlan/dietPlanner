@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   end
 
   scope :auth do
-    get 'is_signed_in', to: 'auth#is_signed_in?'
+    get "is_signed_in", to: "auth#is_signed_in?"
   end
 end
